@@ -67,7 +67,7 @@ export default function Bestsellers() {
 
   return (
     <section
-      className="bg-diva-cream py-20 md:py-28"
+      className="bg-diva-cream pt-10 pb-20 md:pt-16 md:pb-28"
       aria-labelledby="bestsellers-heading"
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
