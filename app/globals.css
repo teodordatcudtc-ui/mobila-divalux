@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --diva-dark: #2d1b2e;
+  --diva-plum: #4a2c4a;
+  --diva-neon: #ff6ec7;
+  --diva-cream: #f5f0eb;
+  --font-geist-sans: system-ui, -apple-system, sans-serif;
+  --font-display: system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-diva-cream text-diva-dark antialiased;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+/* Focus visible pentru accesibilitate */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-diva-neon;
+}
+
+/* Reduce motion pentru utilizatori care preferă */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Efect neon pentru text logo */
+.text-neon {
+  text-shadow:
+    0 0 4px rgba(255, 110, 199, 0.8),
+    0 0 12px rgba(255, 110, 199, 0.5),
+    0 0 24px rgba(255, 110, 199, 0.3);
+}
+
+/* Stil pentru secțiuni cu identitate vizuală distinctă */
+.section-dark {
+  @apply bg-diva-dark text-white;
+}
+
+.section-plum {
+  @apply bg-diva-plum text-white;
+}
+
+.section-light {
+  @apply bg-diva-cream text-diva-dark;
+}
+
+.section-sand {
+  @apply bg-diva-sand text-diva-dark;
+}
+
+/* Ascunde scrollbar-ul la carousel-uri, păstrând derularea (touch + mouse) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
