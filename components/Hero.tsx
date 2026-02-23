@@ -46,15 +46,15 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-[85vh] w-full overflow-hidden bg-[#f7f3ef] md:min-h-[90vh]"
+      className="relative w-full overflow-hidden bg-[#f7f3ef] md:min-h-[90vh]"
       aria-labelledby="hero-heading"
     >
-      {/* Carousel: imagini mai mici (mai puțin stretch = mai puțin pixelat), poziționate mai sus */}
-      <div className="absolute inset-0">
+      {/* Pe mobil: zonă imagine fixă sub header; pe desktop: fundal full */}
+      <div className="relative min-h-[50vh] pt-0 md:absolute md:inset-0 md:min-h-0">
         <AnimatePresence initial={false} mode="wait">
           <motion.div
             key={index}
-            className="hero-slide-bg absolute inset-0 bg-no-repeat"
+            className="hero-slide-bg absolute inset-0 bg-no-repeat md:inset-0"
             style={{ backgroundImage: `url(${slide.image})` }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -66,17 +66,17 @@ export default function Hero() {
         </AnimatePresence>
       </div>
 
-      {/* Overlay pentru lizibilitate text */}
+      {/* Overlay: pe desktop; pe mobil doar sub text */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none md:block"
         style={{
           background: 'linear-gradient(to top, rgba(247,243,239,0.97) 0%, rgba(247,243,239,0.7) 25%, transparent 50%)',
         }}
       />
 
-      {/* Conținut peste fundal */}
-      <div className="relative z-10 mx-auto flex min-h-[85vh] max-w-6xl flex-col justify-end px-4 pb-12 pt-24 md:min-h-[90vh] md:pb-16 md:pt-32 lg:pb-20">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-end md:gap-12">
+      {/* Pe mobil: text fix sub imagine pe fundal bej. Pe desktop: text jos ca înainte */}
+      <div className="relative z-10 mx-auto max-w-6xl px-4 pt-0 pb-8 md:flex md:min-h-[90vh] md:flex-col md:justify-end md:px-6 md:pb-16 md:pt-32 lg:pb-20">
+        <div className="grid grid-cols-1 gap-6 bg-[#f7f3ef] md:grid-cols-2 md:items-end md:gap-12 md:bg-transparent">
           {/* Stânga: categorie + titlu + link */}
           <div>
             <span className="mb-3 inline-flex items-center gap-2 text-sm text-[#5c534a]">

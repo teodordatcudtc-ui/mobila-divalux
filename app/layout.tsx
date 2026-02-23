@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="ro">
       <body className="min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1" id="main-content">
+        <main className="flex-1 overflow-x-hidden w-full max-w-full" id="main-content">
           {children}
         </main>
         <Footer />
