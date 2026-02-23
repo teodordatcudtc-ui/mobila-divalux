@@ -54,12 +54,8 @@ export default function Hero() {
         <AnimatePresence initial={false} mode="wait">
           <motion.div
             key={index}
-            className="absolute inset-0 bg-no-repeat"
-            style={{
-              backgroundImage: `url(${slide.image})`,
-              backgroundSize: '75%',
-              backgroundPosition: 'center 15%',
-            }}
+            className="hero-slide-bg absolute inset-0 bg-no-repeat"
+            style={{ backgroundImage: `url(${slide.image})` }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

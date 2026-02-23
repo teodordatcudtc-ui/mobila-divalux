@@ -70,3 +70,15 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* Hero: pe mobil fundal acoperă tot ecranul, pe desktop 75% ca să nu se pixelizeze */
+.hero-slide-bg {
+  background-size: cover;
+  background-position: center center;
+}
+@media (min-width: 768px) {
+  .hero-slide-bg {
+    background-size: 75%;
+    background-position: center 15%;
+  }
+}
